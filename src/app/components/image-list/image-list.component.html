@@ -1,0 +1,35 @@
+<h1>list of products</h1>
+
+
+<div *ngFor="let glass of getGlasses()">
+  <div class="container">
+    <div class="wrapper">
+      <div class="banner-image"> </div>
+      <h1> Toyota Supra</h1>
+      <p>Lorem ipsum dolor sit amet, <br/>
+        consectetur adipiscing elit.</p>
+    </div>
+    <div class="button-wrapper">
+      <button class="btn outline">DETAILS</button>
+      <button class="btn fill">BUY NOW</button>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!--
+<ul>
+  <li *ngFor="let glass of getGlasses()">
+
+    <img decoding="async" loading="lazy" [src]="'data:image/png;base64,' + glass.image">
+    <h2>{{glass.price}}</h2>
+    <h3>{{glass.name}}</h3>
+    <p>
+        {{glass.description}}
+    </p>
+    <button>Read more</button>
+  </li>
+</ul>
+-->
