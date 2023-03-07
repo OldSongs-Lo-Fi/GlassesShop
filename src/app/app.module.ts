@@ -10,6 +10,14 @@ import {HttpClientModule} from "@angular/common/http";
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CreateOrderComponent } from './pages/create-order/create-order.component';
+import { CartComponent } from './pages/cart/cart.component';
+import {RouterModule} from "@angular/router";
+import {CommonModule} from "@angular/common";
+import { HeroComponent } from './components/hero/hero.component';
+import { GlassesPageComponent } from './pages/glasses-page/glasses-page.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { IntroComponent } from './components/intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +25,18 @@ import { FooterComponent } from './components/footer/footer.component';
     ImageListComponent,
     HomePageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CreateOrderComponent,
+    CartComponent,
+    HeroComponent,
+    GlassesPageComponent,
+    FilterComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [GlassService, OrderService],
   bootstrap: [AppComponent]

@@ -40,5 +40,6 @@ export class ImageListComponent implements OnInit{
   ngOnInit(): void {
     //Updating Data on load
     this.updateData();
+    console.log(this.glasses);
   }
 }

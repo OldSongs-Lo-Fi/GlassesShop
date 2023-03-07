@@ -6,6 +6,6 @@ export interface Glass{
   price: number;
   material: string;
   size: Map<string,string>;
-  complect: Array<string>;
+  complect: string[];
   image: string;
 }
