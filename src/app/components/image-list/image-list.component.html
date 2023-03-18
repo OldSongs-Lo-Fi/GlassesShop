@@ -1,21 +1,6 @@
-<figure *ngFor="let glass of getGlasses()">
-  <img [src]="glass.image" ] [alt]="glass.name">
-  <figcaption>{{glass.name}}</figcaption>
-</figure>
-
-
-
-<!--
-<ul>
-  <li *ngFor="let glass of getGlasses()">
-
-    <img decoding="async" loading="lazy" [src]="'data:image/png;base64,' + glass.image">
-    <h2>{{glass.price}}</h2>
-    <h3>{{glass.name}}</h3>
-    <p>
-        {{glass.description}}
-    </p>
-    <button>Read more</button>
-  </li>
-</ul>
--->
+<div class="wrapper">
+  <figure *ngFor="let glass of getGlasses()" [routerLink]="['/glass/' + glass.id]">
+    <img [src]="glass?.image" [alt]="glass?.name">
+    <figcaption>{{glass.name}}</figcaption>
+  </figure>
+</div>

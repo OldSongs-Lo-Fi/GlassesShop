@@ -8,16 +8,17 @@ import {HttpErrorResponse} from "@angular/common/http";
   templateUrl: './image-list.component.html',
   styleUrls: ['./image-list.component.css']
 })
-export class ImageListComponent implements OnInit{
+export class ImageListComponent {
 
   public glasses: Glass[] = [];
 
-  constructor(private glassService: GlassService){}
+  constructor(private glassService: GlassService){
+    this.updateData();
+  }
 
   public updateData(): void{
     this.glassService.getGlasses().subscribe(
       (response:Glass[]) => {
-        //Connection process
         this.glasses = response;
       },
       (error: HttpErrorResponse) => {
@@ -29,17 +30,12 @@ export class ImageListComponent implements OnInit{
       () => {
         //After Successfully Connection!
         console.log("Connection was Successfully!");
+        console.log(this.glasses);
       }
     );
   }
 
   public getGlasses(): Glass[]{
     return this.glasses;
-  }
-
-  ngOnInit(): void {
-    //Updating Data on load
-    this.updateData();
-    console.log(this.glasses);
   }
 }

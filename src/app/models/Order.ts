@@ -1,5 +1,5 @@
 export interface Order{
-  id: number;
+  id?: number;
   fullName: string;
   mobilePhone: string;
   city: string;

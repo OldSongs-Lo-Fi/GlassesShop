@@ -18,11 +18,11 @@ export class GlassService {
   }
 
   public getGlass(id: number): Observable<Glass>{
-    return this.http.get<Glass>(`${this.serverUrl}/glasses/${id}`);
+    return this.http.get<any>(`${this.serverUrl}/glasses/${id}`);
   }
 
   public addGlass(glass: Glass): Observable<Glass>{
-    return this.http.post<Glass>(`${this.serverUrl}/glasses/addGlass`, glass);
+    return this.http.post<any>(`${this.serverUrl}/glasses/addGlass`, glass);
   }
 
   public deleteGlass(id: number): void{
@@ -31,6 +31,6 @@ export class GlassService {
   }
 
   public updateGlass(glass: Glass): Observable<Glass>{
-    return this.http.put<Glass>(`${this.serverUrl}/glasses/updateGlass`, glass);
+    return this.http.put<any>(`${this.serverUrl}/glasses/updateGlass`, glass);
   }
 }
