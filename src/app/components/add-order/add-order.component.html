@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+
+      <input type="text" (blur)="onBlur()" [(ngModel)]="fullName" placeholder="Full name..."><br>
+      <input type="text" (blur)="onBlur()" [(ngModel)]="mobilePhone" placeholder="Mobile Phone..."><br>
+      <input type="email" (blur)="onBlur()" [(ngModel)]="email" placeholder="Email..."><br>
+
+      <input type="text" (change)="onBlur()" (blur)="onBlur()" [(ngModel)]="city" placeholder="Your city..."><br>
+
+      <div class="radios">
+        <input type="radio" id="contactChoice1"
+               name="contact" value="ukr-poshta" [(ngModel)]="mail">
+        <label for="contactChoice1">Ukr-Poshta</label>
+
+        <input type="radio" id="contactChoice2"
+               name="contact" value="nova-poshta" [(ngModel)]="mail">
+        <label for="contactChoice2">Nova-Poshta</label>
+
+      </div><br>
+      <input type="text" (blur)="onBlur()" [(ngModel)]="mailAddress" placeholder="Mail address..."><br>
+
+
+      <button [disabled]="!readyToPost" class="btn-success" (click)="createOrder()">Submit</button>
+    </div>
+  </div>
+</div>

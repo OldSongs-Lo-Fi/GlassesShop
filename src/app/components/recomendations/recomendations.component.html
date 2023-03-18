@@ -1,0 +1,10 @@
+<div class="container-fluid" style="background: #425a52">
+  <h1 style="text-align: center; font-weight: bold; font-size: 35px; padding-top: 30px">{{'Along with this also buy...' | uppercase}}</h1>
+  <div class="wrapper">
+    <figure *ngFor="let glass of recomendatedGlasses" [routerLink]="['/glass/' + glass.id]">
+      <img [src]="glass?.image" [alt]="glass?.name">
+      <figcaption>{{glass.name}}</figcaption>
+    </figure>
+  </div>
+</div>
+

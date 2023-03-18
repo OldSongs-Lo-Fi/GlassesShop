@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row" style="padding-top: 30px">
+    <div class="col-lg-6 col-sm-12">
+      <img width="100%" [src]="currentGlass?.image" [alt]="currentGlass?.name">
+    </div>
+    <div class="col-1"></div>
+    <div class="col-lg-5 col-sm-12 information" style="max-width: 400px">
+      <h1 style="font-weight: bold">{{currentGlass?.name}}</h1>
+      <p style="color: #6C6C6C">{{currentGlass?.price | currency}}</p>
+      <p>{{currentGlass?.description}}</p>
+      <div>
+        <p>Material: {{currentGlass?.material}}</p>
+        <h2 style="font-weight: bold">Set:</h2>
+        <p *ngIf="currentGlass?.complect">
+          <ng-container *ngFor="let item of currentGlass?.complect">
+            {{item}},
+          </ng-container>
+        </p>
+        <h2 style="font-weight: bold">Size:</h2>
+        <p *ngIf="currentGlass?.size">
+          <ng-container *ngFor="let pair of currentGlass?.size | keyvalue">
+            {{ pair.key }}: {{ pair.value }}<br>
+          </ng-container>
+        </p>
+      </div>
+      <button class="button-5" style="width: 400px" role="button">{{'purchase' | uppercase}}</button>
+    </div>
+  </div>
+</div>
