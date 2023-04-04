@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {GlassService} from "../../services/glass.service";
 import {ActivatedRoute} from "@angular/router";
+import {Glass} from "../../models/Glass";
+import {CartService} from "../../services/cart.service";
 
 @Component({
   selector: 'app-glass-info',
@@ -14,7 +16,8 @@ export class GlassInfoComponent implements OnInit{
 
 
   constructor(private glassService: GlassService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private cartService: CartService) {
   }
   ngOnInit(): void {
     this.glassId = this.activatedRoute.snapshot.paramMap.get("id");
@@ -28,5 +31,10 @@ export class GlassInfoComponent implements OnInit{
       this.currentGlass = resp;
 
     });
+
+
+  }
+  public addToCart(glass: Glass): void {
+    this.cartService.addGlass(glass);
   }
 }

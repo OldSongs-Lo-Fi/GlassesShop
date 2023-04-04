@@ -10,7 +10,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CreateOrderComponent } from './pages/create-order/create-order.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { GlassesPageComponent } from './pages/glasses-page/glasses-page.component';
@@ -21,6 +20,7 @@ import { GlassInfoComponent } from './components/glass-info/glass-info.component
 import { RecomendationsComponent } from './components/recomendations/recomendations.component';
 import { AddOrderComponent } from './components/add-order/add-order.component';
 import {FormsModule} from "@angular/forms";
+import { CartListComponent } from './components/cart-list/cart-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,6 @@ import {FormsModule} from "@angular/forms";
     HomePageComponent,
     HeaderComponent,
     FooterComponent,
-    CreateOrderComponent,
     CartComponent,
     HeroComponent,
     GlassesPageComponent,
@@ -38,7 +37,8 @@ import {FormsModule} from "@angular/forms";
     GlassComponent,
     GlassInfoComponent,
     RecomendationsComponent,
-    AddOrderComponent
+    AddOrderComponent,
+    CartListComponent
   ],
     imports: [
         BrowserModule,

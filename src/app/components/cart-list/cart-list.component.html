@@ -1,0 +1,25 @@
+<div *ngIf="glasses.length > 0; else empt">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12" style="border: #F0E68C">
+        <div class="card container" *ngFor="let glass of glasses">
+          <p>Glass name: {{glass.name}}</p>
+          <img [src]="glass.image">
+          <p>Glass price: {{glass.price}}</p>
+          <button class="button-5 col-6" (click)="plusGlass(glass)">+</button>
+          <button class="button-5 col-6" (click)="minusGlass(glass)">-</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1 style="text-align: center">Total price: {{price | currency}}</h1>
+
+  <app-add-order></app-add-order>
+</div>
+<ng-template #empt>
+  <div class="hero">
+    <h1>Your cart is empty<span>Please take some glasses</span></h1>
+  </div>
+</ng-template>
+
+

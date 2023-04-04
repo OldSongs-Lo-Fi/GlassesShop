@@ -1,6 +1,7 @@
-import {Component, DoCheck, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {OrderService} from "../../services/order.service";
 import {Order} from "../../models/Order";
+import {CartService} from "../../services/cart.service";
 
 @Component({
   selector: 'app-add-order',
@@ -8,6 +9,8 @@ import {Order} from "../../models/Order";
   styleUrls: ['./add-order.component.css']
 })
 export class AddOrderComponent implements OnInit{
+
+
 
   readyToPost = false;
   fullName = ''
@@ -18,7 +21,9 @@ export class AddOrderComponent implements OnInit{
   email = ''
   price= 0
   products: number[] = []
-  constructor(private orderService: OrderService) {
+
+  constructor(private orderService: OrderService,
+              private cartService: CartService) {
   }
 
   ngOnInit(): void {
@@ -35,9 +40,11 @@ export class AddOrderComponent implements OnInit{
       this.mailAddress.trim() &&
       this.email.trim());
   }
-  createOrder(): void{
-    console.log('Order is creating');
+  public createOrder(): void{
+    this.products = this.cartService.getProductIds();
+    this.price = this.cartService.getSummaryPriceOfCart();
     let order: Order = {
+      id: null,
       fullName: this.fullName,
       mobilePhone: this.mobilePhone,
       city: this.city,
@@ -47,8 +54,28 @@ export class AddOrderComponent implements OnInit{
       price: this.price,
       products: this.products
     };
-    console.log(order.fullName + ' ' + order.id);
-    // this.orderService.addOrder(order);
+    console.log("Order information:");
+    console.log("id: " + order.id);
+    console.log("Full name:", order.fullName);
+    console.log("Mobile phone:", order.mobilePhone);
+    console.log("City:", order.city);
+    console.log("Email:", order.email);
+    console.log("Mailing address:", order.mailAddress);
+    console.log("Mail:", order.mail);
+    console.log("Price:", order.price);
+    console.log("Products:", order.products);
+    this.orderService.addOrder(order);
   }
 
 }
+/*    console.log("2##############")
+    console.log("Order information:");
+    console.log("id: " + order.id);
+    console.log("Full name:", order.fullName);
+    console.log("Mobile phone:", order.mobilePhone);
+    console.log("City:", order.city);
+    console.log("Email:", order.email);
+    console.log("Mailing address:", order.mailAddress);
+    console.log("Mail:", order.mail);
+    console.log("Price:", order.price);
+    console.log("Products:", order.products);*/

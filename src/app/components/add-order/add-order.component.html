@@ -1,10 +1,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-6 col-sm-12">
-
-      <input type="text" (blur)="onBlur()" [(ngModel)]="fullName" placeholder="Full name..."><br>
-      <input type="text" (blur)="onBlur()" [(ngModel)]="mobilePhone" placeholder="Mobile Phone..."><br>
-      <input type="email" (blur)="onBlur()" [(ngModel)]="email" placeholder="Email..."><br>
+      <input type="text" (change)="onBlur()" [(ngModel)]="fullName" placeholder="Full name..."><br>
+      <input type="text" (change)="onBlur()" [(ngModel)]="mobilePhone" placeholder="Mobile Phone..."><br>
+      <input type="email" (change)="onBlur()" [(ngModel)]="email" placeholder="Email..."><br>
 
       <input type="text" (change)="onBlur()" (blur)="onBlur()" [(ngModel)]="city" placeholder="Your city..."><br>
 
@@ -18,10 +17,10 @@
         <label for="contactChoice2">Nova-Poshta</label>
 
       </div><br>
-      <input type="text" (blur)="onBlur()" [(ngModel)]="mailAddress" placeholder="Mail address..."><br>
+      <input type="text" (change)="onBlur()" [(ngModel)]="mailAddress" placeholder="Mail address..."><br>
 
 
-      <button [disabled]="!readyToPost" class="btn-success" (click)="createOrder()">Submit</button>
+      <button class="button-5" style="width: 400px" [disabled]="!readyToPost" (click)="createOrder()">Submit</button>
     </div>
   </div>
 </div>

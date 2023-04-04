@@ -21,11 +21,12 @@ export class OrderService {
     return this.http.get<Order>(`${this.serverUrl}/order/${id}`);
   }
 
-  public addOrder(order: Order): Observable<Order>{
-    return this.http.post<Order>(`${this.serverUrl}/order/addOrder`, order);
+  public addOrder(order: Order): any{
+    console.log(JSON.stringify(order))
+    return this.http.post<any>(`${this.serverUrl}/order/addOrder`, order).subscribe();
   }
 
-  public updateOrder(order: Order): Observable<Order>{
-    return this.http.put<Order>(`${this.serverUrl}/order/addOrder`, order);
+  public updateOrder(order: Order): any{
+    return this.http.put<any>(`${this.serverUrl}/order/addOrder`, order).subscribe();
   }
 }
