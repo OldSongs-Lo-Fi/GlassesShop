@@ -2,26 +2,32 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
 
-## Development server
+# Angular Client Application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The Angular Client Application is a full-stack project that connects to a Java Spring Framework server. It provides a user interface for registering orders and sending them to the server for processing.
 
-## Code scaffolding
+## Routing Configuration
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The routing in the Angular Client Application is configured using the `Routes` array. It defines the different routes available in the application and maps them to specific components.
 
-## Build
+### Route Definitions:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Path: ''**\
+  Component: HomePageComponent\
+  Description: This route represents the home page of the application. It is associated with the `HomePageComponent`, which displays the main content of the home page.
 
-## Running unit tests
+- **Path: 'cart'**\
+  Component: CartComponent\
+  Description: This route represents the shopping cart page of the application. It is associated with the `CartComponent`, which displays the items added to the cart.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Path: 'glasses'**\
+  Component: GlassesPageComponent\
+  Description: This route represents the glasses page of the application. It is associated with the `GlassesPageComponent`, which displays the available glasses for selection.
 
-## Running end-to-end tests
+- **Path: 'glass/:id'**\
+  Component: GlassComponent\
+  Description: This route represents the individual glass page of the application. It is associated with the `GlassComponent`, which displays detailed information about a specific glass identified by the `id` parameter.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Please note that these route configurations enable navigation within the Angular Client Application, allowing users to move between different pages and access various functionalities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+If you have any further questions or require additional information, please feel free to reach out.
